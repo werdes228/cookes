@@ -1,10 +1,9 @@
 <?php
 session_start();
-
-if(!isset($_SESSION['user'])){
-    header("Location: login.php");
+if (!isset($_SESSION['user'])) {
+    header('Location: login.html');
     exit;
 }
-
-echo "Добро пожаловать в админ панель, " . $_SESSION['user'];
-echo '<br><a href="logout.php">Выйти</a>';
+?>
+<h1>Профиль пользователя: <?php echo htmlspecialchars($_SESSION['user']); ?></h1>
+<a href="logout.php">Выйти</a>
